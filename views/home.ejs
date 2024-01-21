@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1">
+    <title>My Website</title>
+    <%- include("css.ejs")%>
+</head>
+<body>
+    <div class="background-image"></div>
+
+    <%- include("navbar.ejs")%>
+
+    <section>
+        <div class="card">
+            <h2>Card Title</h2>
+            <p>This is a simple card with some content.</p>
+        </div>
+        <div class="card">
+            <h2>Card Title2</h2>
+            <p>This is a simple card with some content.</p>
+        </div>
+    </section>
+
+    <%- include("footer.ejs")%>
+
+</body>
+</html>
