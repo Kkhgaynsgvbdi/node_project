@@ -11,8 +11,11 @@ app.set('view engine','ejs')
 
 app.use(express.urlencoded({extended : true}))
 
-app.get("/",(req,res)=>{
-    res.render("home.ejs")
+app.get("/",async (req,res)=>{
+    //blogs table bata data(row) nikalnu paryo ani home page lai pass garnu paryo
+    const blogsTableBlogs = await blogs.findAll() 
+    
+    res.render("home.ejs",{blogs : blogsTableBlogs})
 })
 
 app.get("/about",(req,res)=>{
@@ -29,6 +32,9 @@ app.post("/addblog",async(req,res)=>{
     // const subtitle = req.body.subtitle
     // const description = req.body.description
     const {title,subtitle,description}= req.body
+    if(!title || !subtitle || !description){
+        return res.send("Please provide title, subtitle and description")
+    }
   
     //Inserting data into blogs table
   await blogs.create({

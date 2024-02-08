@@ -12,14 +12,15 @@
     <%- include("navbar.ejs")%>
 
     <section>
-        <div class="card">
-            <h2>Card Title</h2>
-            <p>This is a simple card with some content.</p>
-        </div>
-        <div class="card">
-            <h2>Card Title2</h2>
-            <p>This is a simple card with some content.</p>
-        </div>
+        <% blogs.forEach((blog)=>{ %>
+
+            <div class="card">
+                <h2> blog.title </h2>
+                <p>This is a simple card with some content.</p>
+            </div>
+      <% }) %>
+        
+
     </section>
 
     <%- include("footer.ejs")%>
